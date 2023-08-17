@@ -1,2 +1,2 @@
 # AGTaskTracker
-Task Tracking with Angular and TS 
+Task Tracking Webapp implemented in Angular Typescript and Fontawesome/CSS
