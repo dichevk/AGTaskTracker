@@ -1,12 +1,13 @@
+
 import { Injectable } from '@angular/core';
-import { ITask } from '../types/ITask';
-import { TASKS } from '../data/TaskMockData';
+import { ITask } from '../../types/ITask';
+import { TASKS } from '../../data/TaskMockData';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TaskService {
+export class TasksService {
 
   constructor() { }
 
