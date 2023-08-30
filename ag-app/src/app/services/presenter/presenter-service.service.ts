@@ -4,7 +4,7 @@ import { Observable, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class PresenterServiceService {
+export class PresenterService {
   private showTask:boolean = false
   private taskSubject = new Subject()
   constructor() { }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { PresenterService } from 'src/app/services/presenter/presenter-service.service';
+import { Subscription } from 'rxjs'
 
 @Component({
   selector: 'app-header',
@@ -7,12 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   title:string = "Test Header";
-  constructor(){}
+  showAddTask:boolean = false
+  subscription:Subscription;
+  constructor(private presenterService:PresenterService, private router: Router){
+    this.subscription = this.presenterService.onToggle().subscribe((val)=>{this.showAddTask=val})
+
+  }
 
   ngOnInit(): void {
 
   }
+  onDestroy():void{
+    this.subscription.unsubscribe()
+  }
   addTask():void {
-    console.log("emitted")
+  this.presenterService.toggleAddTask();    
+  }
+  hasRoute(route:string):boolean{
+    return this.router.url === route
   }
 }
