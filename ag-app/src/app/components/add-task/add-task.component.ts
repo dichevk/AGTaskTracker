@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { PresenterService } from 'src/app/services/presenter/presenter-service.service';
 import { ITask } from 'src/app/types/ITask';
 import { Subscription } from 'rxjs';
+import { TaskComponent } from '../task/task.component';
 
 @Component({
   selector: 'app-add-task',
